@@ -7,7 +7,7 @@ app.use(cors())
 
 app.use(express.json())
 
-mongoose.connect('mongodb://localhost:27017/blogsDB').then(() => { console.log('DB connected') })
+mongoose.connect('mongodb+srv://dselvakumar2007_db_user:u8cihxhJrOcsSZSz@portfolio.ykzvwpk.mongodb.net').then(() => { console.log('DB connected') })
     .catch(() => { console.log('Failed to connect DB') })
 
 const Blog = mongoose.model('Blog',

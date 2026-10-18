@@ -10,7 +10,7 @@ function Blogs() {
     const [newContent, setNewContent] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/blogs').then((res) => {
+        axios.get('https://portfolio-bjkj.onrender.com/api/blogs').then((res) => {
             setBlogs(res.data)
         }).catch(() => {
             console.log('error to fetch blogs data')
@@ -34,7 +34,7 @@ function Blogs() {
         const date = today.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
 
         const likes = 0
-        await axios.post('http://localhost:5000/api/blogs', { newTitle: newTitle, date: date, newContent: newContent, likes: likes }).then((res) => {
+        await axios.post('https://portfolio-bjkj.onrender.com/api/blogs', { newTitle: newTitle, date: date, newContent: newContent, likes: likes }).then((res) => {
             setBlogs([...blogs, res.data])
             console.log(res.data)
         }).catch((error) => {
@@ -47,10 +47,10 @@ function Blogs() {
 
     const handleLike = async (blog_id) => {
         try {
-            const response = await axios.patch(`http://localhost:5000/api/blogs/like/${blog_id}`);
+            const response = await axios.patch(`https://portfolio-bjkj.onrender.com/api/blogs/like/${blog_id}`);
             // After successfully updating the likes count in the backend, fetch the updated list of blogs
             if (response.status === 200) {
-                axios.get("http://localhost:5000/api/blogs").then((res) => {
+                axios.get("https://portfolio-bjkj.onrender.com/api/blogs").then((res) => {
                     console.log(res.data)
                     setBlogs(res.data)
                 }).catch(() => {
@@ -70,7 +70,7 @@ function Blogs() {
         }
 
         try {
-            await axios.delete(`http://localhost:5000/api/blogs/${blog_id}`)
+            await axios.delete(`https://portfolio-bjkj.onrender.com/api/blogs/${blog_id}`)
 
             setBlogs((prevBlogs) =>
                 prevBlogs.filter((blog) => blog._id !== blog_id)
