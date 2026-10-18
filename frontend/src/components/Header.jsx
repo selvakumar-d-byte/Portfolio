@@ -48,7 +48,7 @@ function Header() {
 
                 <div className="flex items-center gap-3">
 
-                    {log ?<a onClick={handleLogout} href="#" className="cursor-pointer hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1 hover:bg-violet-700 hover:shadow-lg">Logout</a>:
+                    {log ?<button onClick={handleLogout} className="cursor-pointer hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1 hover:bg-violet-700 hover:shadow-lg">Logout</button>:
                      <a href="/login" className=" cursor-pointer hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1 hover:bg-violet-700 hover:shadow-lg">Login</a>
                     }
                     
@@ -89,7 +89,7 @@ function Header() {
 
                         <li className="sm:hidden pt-2">
                             {log?
-                            <a onClick={handleLogout} href="#" className="block text-center rounded-xl bg-violet-600 px-4 py-3 text-white font-semibold">Logout</a>:
+                            <button onClick={handleLogout} className="block text-center rounded-xl bg-violet-600 px-4 py-3 text-white font-semibold">Logout</button>:
                             <a href="/login" className="block text-center rounded-xl bg-violet-600 px-4 py-3 text-white font-semibold">Login</a>
                             }
                         </li>
