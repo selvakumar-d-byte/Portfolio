@@ -29,17 +29,9 @@ function About() {
             className="py-20 px-5 md:px-8 bg-white scroll-mt-16"
         >
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-                {/* About Content */}
                 <div>
-                    <p className="text-violet-600 font-semibold uppercase tracking-widest text-sm">
-                        Get to know me
-                    </p>
-
-                    <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
-                        About Me
-                    </h2>
-
+                    <p className="text-violet-600 font-semibold uppercase tracking-widest text-sm">Get to know me</p>
+                    <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">About Me</h2>
                     <p className="mt-5 text-gray-600 leading-8">
                         I'm passionate about building modern web
                         applications and solving real-world problems
@@ -56,7 +48,6 @@ function About() {
                     </a>
                 </div>
 
-                {/* About Details */}
                 <div className="grid grid-cols-2 gap-4">
                     {details.map((item) => (
                         <div
