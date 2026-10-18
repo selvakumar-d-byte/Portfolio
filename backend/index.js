@@ -1,14 +1,18 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
+require('dotenv').config()
+const dns = require('node:dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 const app = express()
 app.use(cors())
 
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://dselvakumar2007_db_user:Portfolio@portfolio.ykzvwpk.mongodb.net').then(() => { console.log('DB connected') })
-    .catch(() => { console.log('Failed to connect DB') })
+mongoose.connect(process.env.MONGODB_URL)
+    .then(() => console.log('DB connected'))
+    .catch((error) => console.log('MongoDB Error:', error.message))
 
 const Blog = mongoose.model('Blog',
     {
@@ -60,7 +64,7 @@ app.patch('/api/blogs/like/:id', async (req, res) => {
         const updatedBlog = await Blog.findByIdAndUpdate(
             req.params.id,
             { $inc: { likes: 1 } },
-            { new: true } 
+            { new: true }
         );
 
         res.json(updatedBlog);
@@ -69,8 +73,8 @@ app.patch('/api/blogs/like/:id', async (req, res) => {
     }
 });
 
-app.delete('/api/blogs/:id', async function(req,res){
-    try{
+app.delete('/api/blogs/:id', async function (req, res) {
+    try {
         const deletedBlog = await Blog.findByIdAndDelete(req.params.id)
 
         if (!deletedBlog) {
@@ -80,12 +84,12 @@ app.delete('/api/blogs/:id', async function(req,res){
         }
 
         res.status(200).json({
-            message:'Deleted'
+            message: 'Deleted'
         })
     }
-    catch(error){
+    catch (error) {
         res.status(500).json({
-            message:error.message
+            message: error.message
         })
     }
 })
