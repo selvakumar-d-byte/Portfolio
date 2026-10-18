@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
-import { onAuthStateChanged } from "firebase/auth";
 import auth from "../config/firebase";
 
 function Blogs() {

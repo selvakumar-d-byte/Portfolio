@@ -48,7 +48,7 @@ function Header() {
 
                 <div className="flex items-center gap-3">
 
-                    {log ?<a onClick={handleLogout} className="cursor-pointer hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1 hover:bg-violet-700 hover:shadow-lg">Logout</a>:
+                    {log ?<a onClick={handleLogout} href="" className="cursor-pointer hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1 hover:bg-violet-700 hover:shadow-lg">Logout</a>:
                      <a href="/login" className=" cursor-pointer hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1 hover:bg-violet-700 hover:shadow-lg">Login</a>
                     }
                     

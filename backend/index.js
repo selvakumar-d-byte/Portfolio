@@ -10,7 +10,6 @@ app.use(cors())
 
 app.use(express.json())
 
-console.log("MONGODB_URL exists:", !!process.env.MONGODB_URL);
 mongoose.connect(process.env.MONGODB_URL)
     .then(() => console.log("DB connected"))
     .catch((error) => console.log("MongoDB Error:", error.message));

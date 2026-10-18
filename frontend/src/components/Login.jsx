@@ -18,7 +18,7 @@ function Login() {
                 navigate('/')
             }
         })
-    },[])
+    },[navigate])
 
     async function handleLogin(e){
         e.preventDefault()
