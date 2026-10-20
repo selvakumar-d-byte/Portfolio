@@ -110,9 +110,13 @@ function Blogs() {
                             <p className="text-sm text-violet-600 font-medium"> {blog.date}</p>
                             <h3 className="text-xl font-semibold text-gray-900 mt-3">{blog.newTitle}</h3>
                             <p className="text-gray-600 leading-7 mt-3 whitespace-pre-line">{blog.newContent}</p>
-                            <p className=" rounded-lg bg-violet-600 text-white p-2 cursor-pointer inline-block" onClick={() => handleLike(blog._id)}>Like</p>
-                            <span className="ml-2">{blog.likes} Likes</span>
-                            {admin && (<button className="absolute right-6 bottom-6 text-red-500 hover:text-red-700" onClick={() => handleDelete(blog._id)}>Delete</button>)}
+                            <div className="flex justify-between pt-4">
+                                <div>
+                                    <p className=" rounded-lg bg-violet-600 text-white px-2 py-1 cursor-pointer inline-block" onClick={() => handleLike(blog._id)}>Like</p>
+                                    <span className="ml-2">{blog.likes} Likes</span>
+                                </div>
+                                {admin && (<button className="text-red-500 hover:text-red-700" onClick={() => handleDelete(blog._id)}>Delete</button>)}
+                            </div>
                         </article>
                     ))}
                 </div>
